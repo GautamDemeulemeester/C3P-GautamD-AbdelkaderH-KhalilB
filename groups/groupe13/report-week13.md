@@ -19,3 +19,17 @@ Pour cette semaine et cette dernière séance de C3P, je me suis concentré sur 
 * **Méthodologie** : J'ai appliqué le TDD (Test Driven Development) pour garantir que l'annulation fonctionne parfaitement, même dans les cas complexes comme lorsqu'une caisse a été poussée (gestion via un flag boxPushed pour ramener la caisse en arrière).
 
 Le code est disponible sur github : https://github.com/K-Boo/Myg
+
+## Khalil BOUCHAMA
+ 
+Cette semaine, j'ai réalisé terminé l'implémentation complète du compteur de mouvements et son intégration avec le système d'annulation (Undo) :
+
+ j'ai :
+- Implémenté la méthode de mise à jour updateMoveCountDisplay.
+- Modifié la gestion des événements (manageEvent:) pour rafraîchir le compteur après chaque déplacement validé par le double dispatch.
+
+Pour l'Intégration de l'Undo, j'ai :
+- Créé le test testUndoDecrementsMoveCount pour reproduire le problème de non-décrémentation.
+- Ajouté la méthode decrementMoveCount dans le MygSkGameManager.
+- Modifié la méthode MygSkBoard >> undo pour déclencher la décrémentation du compteur à chaque annulation d'action, garantissant ainsi la cohérence du score affiché.
+
